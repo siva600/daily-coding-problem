@@ -1,10 +1,10 @@
-from random import randint
+import secrets
 
 NUM_CARDS = 52
 
 
 def get_random_number(k):
-    return randint(0, k)
+    return secrets.SystemRandom().randint(0, k)
 
 
 def shuffle_card_deck():
