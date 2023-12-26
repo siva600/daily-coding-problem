@@ -4,7 +4,7 @@ def perm_counter(num_dice, face_range, total):
     elif num_dice == 1 and total in face_range:
         return 1
 
-    return sum([perm_counter(num_dice - 1, face_range, total - x) for x in face_range])
+    return sum(perm_counter(num_dice - 1, face_range, total - x) for x in face_range)
 
 
 def throw_dice(num_dice, faces, total):

@@ -1,6 +1,6 @@
 def deduce_nums(arr):
     ln = len(arr)
-    count_gt = sum([1 for x in arr if x == '+'])
+    count_gt = sum(1 for x in arr if x == '+')
     first = ln - count_gt - 1
     nums = [first]
     small, large = first - 1, first + 1

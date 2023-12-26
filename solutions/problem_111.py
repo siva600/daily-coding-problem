@@ -25,7 +25,7 @@ def get_anagram_starts(string, word):
 
     # This is a constant time operation because it has
     # a fixed upper bound of 26 read operations
-    if all([x < 1 for x in needed.values()]):
+    if all(x < 1 for x in needed.values()):
         anagram_indices.append(0)
 
     for i in range(len(word), len(string)):
@@ -39,7 +39,7 @@ def get_anagram_starts(string, word):
         if char_gained in needed:
             remove_gained_char(needed, char_gained)
 
-        if all([x < 1 for x in needed.values()]):
+        if all(x < 1 for x in needed.values()):
             anagram_indices.append(window_start + 1)
 
     return anagram_indices

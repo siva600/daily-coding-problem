@@ -8,7 +8,7 @@ class Node:
         if not self.ch:
             return 1
 
-        return 1 + sum([x.size() for x in self.ch])
+        return 1 + sum(x.size() for x in self.ch)
 
 
 def split(node):
