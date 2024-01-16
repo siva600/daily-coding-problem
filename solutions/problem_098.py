@@ -37,7 +37,7 @@ def exists(board, word):
         for col in range(len(board[0])):
             if board[row][col] == first_char:
                 result = result or existence_helper(
-                    word[1:], board, row, col, set(["{}-{}".format(row, col)]))
+                    word[1:], board, row, col, {"{}-{}".format(row, col)})
 
     return result
 

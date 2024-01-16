@@ -40,22 +40,22 @@ c = Node('c')
 d = Node('d')
 e = Node('e')
 f = Node('f')
-g.nodes = set([a, b, c, d, e, f])
+g.nodes = {a, b, c, d, e, f}
 
-g.edges[a] = set([d])
-g.edges[b] = set([d, e, f])
-g.edges[c] = set([f])
-g.edges[d] = set([a, b])
-g.edges[e] = set([b])
-g.edges[f] = set([b, c])
+g.edges[a] = {d}
+g.edges[b] = {d, e, f}
+g.edges[c] = {f}
+g.edges[d] = {a, b}
+g.edges[e] = {b}
+g.edges[f] = {b, c}
 assert g.is_bipartite()
 
 g.edges = dict()
-g.nodes = set([a, b, c, d, e, f])
-g.edges[a] = set([d])
-g.edges[b] = set([d, e, f])
-g.edges[c] = set([f])
-g.edges[d] = set([a, b])
-g.edges[e] = set([b, f])
-g.edges[f] = set([b, c, e])
+g.nodes = {a, b, c, d, e, f}
+g.edges[a] = {d}
+g.edges[b] = {d, e, f}
+g.edges[c] = {f}
+g.edges[d] = {a, b}
+g.edges[e] = {b, f}
+g.edges[f] = {b, c, e}
 assert not g.is_bipartite()

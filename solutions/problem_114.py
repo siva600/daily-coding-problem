@@ -44,10 +44,10 @@ def reverse_words(string, delimiters):
 
 
 assert reverse_words("hello/world:here/",
-                     set([':', '/'])) == "here/world:hello/"
+                     {':', '/'}) == "here/world:hello/"
 assert reverse_words(":hello//world:here/",
-                     set([':', '/'])) == ":here//world:hello/"
+                     {':', '/'}) == ":here//world:hello/"
 assert reverse_words("hello//world:here",
-                     set([':', '/'])) == "here//world:hello"
+                     {':', '/'}) == "here//world:hello"
 assert reverse_words("hello/world:here",
-                     set([':', '/'])) == "here/world:hello"
+                     {':', '/'}) == "here/world:hello"

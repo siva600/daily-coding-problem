@@ -4,7 +4,7 @@
 
 def generate_combos(chars, k, context=""):
     if not k:
-        return set([context])
+        return {context}
 
     combos = set()
     for ch in chars:
@@ -15,13 +15,13 @@ def generate_combos(chars, k, context=""):
 
 def get_debruijn_seq(chars, combos, context=""):
     if not combos:
-        return set([context])
+        return {context}
 
     dseqs = set()
     if not context:
         for cb in combos:
             child_dseqs = get_debruijn_seq(
-                chars, combos - set([cb]), cb)
+                chars, combos - {cb}, cb)
             dseqs |= child_dseqs
 
         return dseqs
@@ -30,7 +30,7 @@ def get_debruijn_seq(chars, combos, context=""):
         new_cb = context[-2:] + ch
         if new_cb in combos:
             child_dseqs = get_debruijn_seq(
-                chars, combos - set([new_cb]), context + ch)
+                chars, combos - {new_cb}, context + ch)
             dseqs |= child_dseqs
 
     return dseqs

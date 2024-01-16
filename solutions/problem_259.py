@@ -15,5 +15,5 @@ def get_optimal_chars(words):
 
 
 # Tests
-assert get_optimal_chars(["cat", "calf", "dog", "bear"]) == set(['b'])
-assert get_optimal_chars(["cat", "calf", "dog", "bear", "ao"]) == set(['b', 'a'])
+assert get_optimal_chars(["cat", "calf", "dog", "bear"]) == {'b'}
+assert get_optimal_chars(["cat", "calf", "dog", "bear", "ao"]) == {'b', 'a'}

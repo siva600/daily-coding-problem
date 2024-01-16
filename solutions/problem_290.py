@@ -2,7 +2,7 @@ COLORS = {"R", "G", "B"}
 
 
 def get_odd_man(col_a, col_b):
-    return list(COLORS - set([col_a, col_b]))[0]
+    return list(COLORS - {col_a, col_b})[0]
 
 
 def minimize(quixes):

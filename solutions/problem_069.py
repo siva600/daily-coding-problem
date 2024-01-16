@@ -6,7 +6,7 @@ def get_pairwise_products(arr):
     for i in range(len(arr)):
         for j in range(len(arr)):
             if i != j:
-                pairwise_products.append([set([i, j]), arr[i] * arr[j]])
+                pairwise_products.append([{i, j}, arr[i] * arr[j]])
 
     return pairwise_products
 

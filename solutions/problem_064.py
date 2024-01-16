@@ -55,7 +55,7 @@ def count_knights_tours(size):
     for i in range(size):
         for j in range(size):
             start = Position(i, j)
-            count += run_knights_tour(start, size, set([start]))
+            count += run_knights_tour(start, size, {start})
 
     return count
 
