@@ -1,5 +1,5 @@
 from typing import Set
-from random import sample
+import secrets
 
 
 class Coord:
@@ -46,7 +46,7 @@ def get_region_count(text: str):
 
     regions = 0
     while empty_spaces:
-        start = sample(empty_spaces, 1)[0]
+        start = secrets.SystemRandom().sample(empty_spaces, 1)[0]
         explore_region(start, empty_spaces, nrows, ncols)
         regions += 1
 

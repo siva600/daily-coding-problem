@@ -1,5 +1,5 @@
-from random import random
 import bisect
+import secrets
 
 
 class ProbablisticGenerator:
@@ -15,7 +15,7 @@ class ProbablisticGenerator:
             self.cum_probs.append(current_cum_prob)
 
     def generate_number(self):
-        rand = random()
+        rand = secrets.SystemRandom().random()
         index = bisect.bisect_left(self.cum_probs, rand)
 
         return self.numbers[index]

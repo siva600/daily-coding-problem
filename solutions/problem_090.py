@@ -1,8 +1,8 @@
-from random import randint
+import secrets
 
 
 def generate_random_num(n, excluded_nums):
-    rand = randint(0, n-1)
+    rand = secrets.SystemRandom().randint(0, n-1)
     if rand in excluded_nums:
         return generate_random_num(n, excluded_nums)
 

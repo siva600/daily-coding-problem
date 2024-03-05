@@ -1,8 +1,8 @@
-from random import randint
+import secrets
 
 
 def rand5():
-    return randint(1, 5)
+    return secrets.SystemRandom().randint(1, 5)
 
 
 def rand7():

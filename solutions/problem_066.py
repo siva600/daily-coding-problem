@@ -1,10 +1,10 @@
 # assume HEADS = 1 and TAILS = 0 or vice-versa
 
-from random import random
+import secrets
 
 
 def get_biased_flip():
-    rand = random()
+    rand = secrets.SystemRandom().random()
     return 0 if rand < 0.7 else 1
 
 

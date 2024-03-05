@@ -1,5 +1,5 @@
 import sys
-from random import randint
+import secrets
 
 cache = dict()
 
@@ -24,7 +24,7 @@ def get_collatz_seq(num, prev=list()):
 # Tests
 experiments = 10
 for _ in range(experiments):
-    num = randint(1, sys.maxsize)
+    num = secrets.SystemRandom().randint(1, sys.maxsize)
     cs = get_collatz_seq(num)
     assert cs[-1] == 1
 

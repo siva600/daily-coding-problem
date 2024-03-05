@@ -1,4 +1,4 @@
-from random import random
+import secrets
 
 count_so_far = 0
 result = None
@@ -13,7 +13,7 @@ def pick_random_element(x):
     if count_so_far == 1:
         result = x
     else:
-        random_value = int(count_so_far * random())
+        random_value = int(count_so_far * secrets.SystemRandom().random())
         if random_value == count_so_far - 1:
             result = x
 
