@@ -21,7 +21,8 @@ def evaluate_char_maps(exp1, exp2, res, char_maps):
             return char_map
 
 
-def assign_letters(chars_left, nums_left, restrictions, char_map=dict()):
+def assign_letters(chars_left, nums_left, restrictions, char_map=None):
+    char_map = {} if char_map is None else char_map
     if not chars_left:
         return [char_map]
 

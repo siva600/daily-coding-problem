@@ -1,4 +1,5 @@
-def get_min_removals(intervals, reserved_intervals=list(), removed=0):
+def get_min_removals(intervals, reserved_intervals=None, removed=0):
+    reserved_intervals = [] if reserved_intervals is None else reserved_intervals
     print(reserved_intervals)
 
     if not intervals:

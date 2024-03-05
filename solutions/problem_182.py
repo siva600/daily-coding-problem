@@ -30,7 +30,8 @@ class Graph:
         self.adj_lists[node_b].add(node_a)
 
 
-def are_connected(g, source, target, seen=set()):
+def are_connected(g, source, target, seen=None):
+    seen = set() if seen is None else seen
     if source == target:
         return True
 

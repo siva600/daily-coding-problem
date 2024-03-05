@@ -1,4 +1,5 @@
-def valid_paren(string, stack=list()):
+def valid_paren(string, stack=None):
+    stack = [] if stack is None else stack
 
     if not string and not stack:
         return True

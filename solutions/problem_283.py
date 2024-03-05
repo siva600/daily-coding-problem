@@ -24,7 +24,8 @@ def populate_heap(n, heap, regular_nums):
     populate_heap(n, heap, regular_nums)
 
 
-def get_n_regular(n, factor_counts=dict()):
+def get_n_regular(n, factor_counts=None):
+    factor_counts = {} if factor_counts is None else factor_counts
     factor_counts = start_factor_counts
 
     heap, regular_nums = list(), set()

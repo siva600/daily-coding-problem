@@ -1,4 +1,5 @@
-def get_largest_subset(arr, prev_num=1, curr_ind=0, prev_subset=[]):
+def get_largest_subset(arr, prev_num=1, curr_ind=0, prev_subset=None):
+    prev_subset = [] if prev_subset is None else prev_subset
     if curr_ind == len(arr):
         return prev_subset
 

@@ -1,5 +1,7 @@
 class GraphPath:
-    def __init__(self, nodes=set(), letter_counts=dict()):
+    def __init__(self, nodes=None, letter_counts=None):
+        nodes = set() if nodes is None else nodes
+        letter_counts = {} if letter_counts is None else letter_counts
         self.nodes = nodes
         self.letter_counts = letter_counts
 

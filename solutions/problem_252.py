@@ -2,7 +2,8 @@ import math
 from fractions import Fraction
 
 
-def get_egypt_frac(fraction, prev_fracs=list()):
+def get_egypt_frac(fraction, prev_fracs=None):
+    prev_fracs = [] if prev_fracs is None else prev_fracs
     if fraction.numerator == 1:
         prev_fracs.append(fraction)
 

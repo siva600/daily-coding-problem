@@ -2,7 +2,8 @@ def is_palindrome(string):
     return bool(string) and string == string[::-1]
 
 
-def split_into_pals(string, curr="", prev_pals=[]):
+def split_into_pals(string, curr="", prev_pals=None):
+    prev_pals = [] if prev_pals is None else prev_pals
 
     if not string and not curr:
         return prev_pals

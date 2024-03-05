@@ -15,7 +15,8 @@ class Graph:
         self.nodes = nodes
         self.unseen_nodes = None
 
-    def has_cycle_helper(self, node, path=list()):
+    def has_cycle_helper(self, node, path=None):
+        path = [] if path is None else path
         if node in self.unseen_nodes:
             self.unseen_nodes.remove(node)
 

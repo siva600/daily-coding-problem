@@ -4,7 +4,8 @@ from random import randint
 cache = dict()
 
 
-def get_collatz_seq(num, prev=list()):
+def get_collatz_seq(num, prev=None):
+    prev = [] if prev is None else prev
     prev.append(num)
 
     if num in cache:

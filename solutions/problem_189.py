@@ -1,4 +1,5 @@
-def get_longest_uqsub(arr, seen=set()):
+def get_longest_uqsub(arr, seen=None):
+    seen = set() if seen is None else seen
     if not arr:
         return len(seen)
 
