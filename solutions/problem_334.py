@@ -20,7 +20,7 @@ def possible(arr):
             except Exception:
                 pass
 
-    return any([possible(x) for x in new_possibilities])
+    return any(possible(x) for x in new_possibilities)
 
 
 # Tests

@@ -40,4 +40,4 @@ def get_debruijn_seq(chars, combos, context=""):
 c, k = {'0', '1'}, 3
 combos = generate_combos(c, k)
 dseqs = get_debruijn_seq(c, combos)
-assert all([all([cb in ds for cb in combos]) for ds in dseqs])
+assert all(all([cb in ds for cb in combos]) for ds in dseqs)

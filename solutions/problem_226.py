@@ -41,7 +41,7 @@ def update_letter_order_helper(sorted_words):
 
     update_letter_order(sorted_words, letters)
 
-    max_children = max([len(x) for x in letters.values()])
+    max_children = max(len(x) for x in letters.values())
     potential_heads = [x for x in letters if len(letters[x]) == max_children]
 
     path = None

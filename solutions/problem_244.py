@@ -4,7 +4,7 @@ import time
 def get_next_prime(primes_seen):
     num = primes_seen[-1] + 1
     while True:
-        if all([num % x for x in primes_seen]):
+        if all(num % x for x in primes_seen):
             time.sleep(0.1)
             yield num
         num += 1

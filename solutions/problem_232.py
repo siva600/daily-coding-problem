@@ -22,7 +22,7 @@ class Trie:
 
         self.size += 1
         sub_trie.add_word(word[1:], value)
-        self.value = sum([x.value for x in self.letter_map.values()])
+        self.value = sum(x.value for x in self.letter_map.values())
 
     def find_prefix(self, word):
         if not word:
