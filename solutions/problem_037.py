@@ -1,6 +1,6 @@
 def get_power_set(numbers):
     if len(numbers) == 0:
-        return [set([])]
+        return [set()]
 
     power_set = list()
 

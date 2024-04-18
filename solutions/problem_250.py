@@ -35,8 +35,8 @@ def assign_letters(chars_left, nums_left, restrictions, char_map=dict()):
         char_map_cp[curr_char] = num
 
         child_char_maps = assign_letters(
-            chars_left - set([curr_char]),
-            nums_left - set([num]),
+            chars_left - {curr_char},
+            nums_left - {num},
             restrictions,
             char_map_cp)
         char_maps.extend(child_char_maps)
