@@ -1,4 +1,6 @@
 from random import random
+import math
+
 radius = 2
 
 
@@ -14,4 +16,4 @@ def estimate_pi(num_random_tests):
     return 4 * pi_counter / num_random_tests
 
 
-assert round(estimate_pi(100000000), 3) == 3.141
+assert math.isclose(round(estimate_pi(100000000), 3), 3.141, rel_tol=1e-09, abs_tol=0.0)

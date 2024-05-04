@@ -1,3 +1,5 @@
+import math
+
 class UnitConverter:
     def __init__(self):
         self.conv_unit = None
@@ -25,9 +27,9 @@ uc = UnitConverter()
 uc.add_unit(("inch", "foot"), (12, 1))
 uc.add_unit(("foot", "yard"), (3, 1))
 uc.add_unit(("yard", "chain"), (22, 1))
-assert uc.convert("inch", 24, "foot") == 2.0
+assert math.isclose(uc.convert("inch", 24, "foot"), 2.0, rel_tol=1e-09, abs_tol=0.0)
 assert uc.convert("inch", 36, "yard") == 1
-assert uc.convert("inch", 48, "yard") == 1.33
-assert uc.convert("foot", 4, "yard") == 1.33
-assert uc.convert("chain", 2, "inch") == 1584.0
-assert uc.convert("chain", 3, "foot") == 198.0
+assert math.isclose(uc.convert("inch", 48, "yard"), 1.33, rel_tol=1e-09, abs_tol=0.0)
+assert math.isclose(uc.convert("foot", 4, "yard"), 1.33, rel_tol=1e-09, abs_tol=0.0)
+assert math.isclose(uc.convert("chain", 2, "inch"), 1584.0, rel_tol=1e-09, abs_tol=0.0)
+assert math.isclose(uc.convert("chain", 3, "foot"), 198.0, rel_tol=1e-09, abs_tol=0.0)

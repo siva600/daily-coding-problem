@@ -1,6 +1,7 @@
 # assume HEADS = 1 and TAILS = 0 or vice-versa
 
 from random import random
+import math
 
 
 def get_biased_flip():
@@ -24,7 +25,7 @@ for key in results_unbiased:
     results_unbiased[key] /= num_experiments
     results_unbiased[key] = round(results_unbiased[key], 2)
 
-assert results_biased[0] == 0.7
-assert results_biased[1] == 0.3
-assert results_unbiased[0] == 0.5
-assert results_unbiased[1] == 0.5
+assert math.isclose(results_biased[0], 0.7, rel_tol=1e-09, abs_tol=0.0)
+assert math.isclose(results_biased[1], 0.3, rel_tol=1e-09, abs_tol=0.0)
+assert math.isclose(results_unbiased[0], 0.5, rel_tol=1e-09, abs_tol=0.0)
+assert math.isclose(results_unbiased[1], 0.5, rel_tol=1e-09, abs_tol=0.0)

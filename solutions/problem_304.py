@@ -1,4 +1,5 @@
 from typing import Set, List
+import math
 
 
 BOARD_SIZE = 8
@@ -64,5 +65,5 @@ def get_prob_remain(start: Position, turns: int) -> float:
 
 
 # Tests
-assert get_prob_remain(Position(4, 4), 1) == 1.0
+assert math.isclose(get_prob_remain(Position(4, 4), 1), 1.0, rel_tol=1e-09, abs_tol=0.0)
 assert get_prob_remain(Position(1, 1), 3) < 0.66

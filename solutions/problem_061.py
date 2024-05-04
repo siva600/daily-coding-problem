@@ -1,3 +1,5 @@
+import math
+
 def pow(x, y):
     if not x:
         return 0
@@ -25,7 +27,7 @@ assert pow(2, 10) == 1024
 assert pow(2, 1) == 2
 assert pow(3, 3) == 27
 assert pow(10, 3) == 1000
-assert pow(2, -3) == 0.125
-assert pow(10, -2) == 0.01
+assert math.isclose(pow(2, -3), 0.125, rel_tol=1e-09, abs_tol=0.0)
+assert math.isclose(pow(10, -2), 0.01, rel_tol=1e-09, abs_tol=0.0)
 assert pow(5, 0) == 1
 assert pow(0, 2) == 0
