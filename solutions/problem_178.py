@@ -2,11 +2,11 @@
 # because the `nth` and the `(n-1)th` dice rolls should be
 # independent events
 
-from random import randint
+import secrets
 
 
 def roll_dice(sought_values, index, prev_tosses):
-    rand = randint(1, 6)
+    rand = secrets.SystemRandom().randint(1, 6)
 
     if sought_values[index] == rand:
         index += 1
