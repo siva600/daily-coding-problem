@@ -1,5 +1,5 @@
-from random import random
 import bisect
+import secrets
 
 
 def get_transition_map(transition_probs):
@@ -19,7 +19,7 @@ def get_transition_map(transition_probs):
 
 
 def get_new_state(state_trans_probs):
-    rand = random()
+    rand = secrets.SystemRandom().random()
     probs, states = state_trans_probs
     index = bisect.bisect(probs, rand)
 

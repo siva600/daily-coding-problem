@@ -1,4 +1,4 @@
-from random import shuffle
+import secrets
 
 
 class Node:
@@ -44,7 +44,7 @@ def unishuffle(llist):
         node = node.next
         length += 1
 
-    shuffle(node_list)
+    secrets.SystemRandom().shuffle(node_list)
 
     dummy = Node(None)
     for node in node_list:

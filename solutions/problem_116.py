@@ -1,4 +1,4 @@
-from random import random, randint
+import secrets
 
 
 class Node:
@@ -20,7 +20,7 @@ class Node:
 
     @staticmethod
     def generate():
-        return Node(randint(1, 100000))
+        return Node(secrets.SystemRandom().randint(1, 100000))
 
     @property
     def left(self):
@@ -42,7 +42,7 @@ ref = a
 nodes = set()
 i = 0
 while i < tree_size:
-    ref = ref.left if random() < 0.5 else ref.right
+    ref = ref.left if secrets.SystemRandom().random() < 0.5 else ref.right
     nodes.add(ref)
 
     i += 1
