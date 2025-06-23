@@ -1,4 +1,4 @@
-from random import random
+import secrets
 
 card_distribution = dict()
 
@@ -21,7 +21,7 @@ def generate_card_distribution():
 
 
 def get_next_card_value():
-    rand = random()
+    rand = secrets.SystemRandom().random()
     lower, upper = 0, None
     for key, value in card_distribution.items():
         upper = value

@@ -1,6 +1,6 @@
 from time import time
-from random import random, randrange
 import bisect
+import secrets
 
 REQUESTS_PER_FILE = 100
 
@@ -65,11 +65,11 @@ def run_experiments(requests):
     for i in range(requests):
         rq.record(i)
 
-        if random() < 0.001:
+        if secrets.SystemRandom().random() < 0.001:
             if not lower:
                 lower = i
             else:
-                upper = randrange(lower, i)
+                upper = secrets.SystemRandom().randrange(lower, i)
 
             if lower and upper:
                 num_req = rq.range(lower, upper)
